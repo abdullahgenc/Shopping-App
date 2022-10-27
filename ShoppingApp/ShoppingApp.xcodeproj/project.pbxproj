@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B36A87B2909A2CA00E48F80 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36A8792909A2CA00E48F80 /* OnboardingViewController.swift */; };
+		0B36A87C2909A2CA00E48F80 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B36A87A2909A2CA00E48F80 /* OnboardingViewController.xib */; };
+		0B36A87E2909A76200E48F80 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36A87D2909A76200E48F80 /* OnboardingView.swift */; };
+		0B36A8802909A78200E48F80 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B36A87F2909A78200E48F80 /* OnboardingView.xib */; };
 		0BE2F5E32909534500E2AA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E22909534500E2AA92 /* AppDelegate.swift */; };
 		0BE2F5E52909534500E2AA92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E42909534500E2AA92 /* SceneDelegate.swift */; };
 		0BE2F5E72909534500E2AA92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E62909534500E2AA92 /* ViewController.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B36A8792909A2CA00E48F80 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		0B36A87A2909A2CA00E48F80 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		0B36A87D2909A76200E48F80 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0B36A87F2909A78200E48F80 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		0BE2F5DF2909534500E2AA92 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE2F5E22909534500E2AA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BE2F5E42909534500E2AA92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B36A8762909A27C00E48F80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B36A87A2909A2CA00E48F80 /* OnboardingViewController.xib */,
+				0B36A8782909A28A00E48F80 /* OnboardingView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B36A8772909A28100E48F80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B36A8792909A2CA00E48F80 /* OnboardingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B36A8782909A28A00E48F80 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				0B36A87D2909A76200E48F80 /* OnboardingView.swift */,
+				0B36A87F2909A78200E48F80 /* OnboardingView.xib */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
 		0BE2F5D62909534500E2AA92 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +170,7 @@
 		0BE2F6132909548000E2AA92 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0BE2F61929095DE000E2AA92 /* Onboarding */,
 				0BE2F6142909548600E2AA92 /* Initial */,
 			);
 			path = Screens;
@@ -181,6 +216,15 @@
 				0BE2F5ED2909534600E2AA92 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0BE2F61929095DE000E2AA92 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0B36A8772909A28100E48F80 /* Controller */,
+				0B36A8762909A27C00E48F80 /* View */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +334,8 @@
 				0BE2F5EF2909534600E2AA92 /* LaunchScreen.storyboard in Resources */,
 				0BE2F5EC2909534600E2AA92 /* Assets.xcassets in Resources */,
 				0BE2F5EA2909534500E2AA92 /* Main.storyboard in Resources */,
+				0B36A8802909A78200E48F80 /* OnboardingView.xib in Resources */,
+				0B36A87C2909A2CA00E48F80 /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +363,8 @@
 				0BE2F5E72909534500E2AA92 /* ViewController.swift in Sources */,
 				0BE2F5E32909534500E2AA92 /* AppDelegate.swift in Sources */,
 				0BE2F5E52909534500E2AA92 /* SceneDelegate.swift in Sources */,
+				0B36A87E2909A76200E48F80 /* OnboardingView.swift in Sources */,
+				0B36A87B2909A2CA00E48F80 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
