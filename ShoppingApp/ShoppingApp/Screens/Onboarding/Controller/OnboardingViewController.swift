@@ -12,8 +12,7 @@ final class OnboardingViewController: UIViewController {
     private let pageWidth: CGFloat = UIScreen.main.bounds.width
 
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var contentView:
-    UIView!
+    @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var skipButton: UIButton!
     @IBOutlet private weak var nextButton: UIButton!
     @IBOutlet private weak var pageControl: UIPageControl!
@@ -122,7 +121,7 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func goToAuth() {
-        navigationController?.pushViewController(AuthViewController(), animated: true)
+        navigationController?.pushViewController(AuthViewController(viewModel: AuthViewModel()), animated: true)
     }
 }
 
