@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpView" customModule="ShoppingApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="r5M-2E-FRw"/>
+                <outlet property="emailTextView" destination="2EQ-N7-Ho2" id="73w-qW-lNw"/>
+                <outlet property="passwordAgainTextView" destination="qhX-YT-LtS" id="Fsd-mx-Y8M"/>
+                <outlet property="passwordTextView" destination="R4j-ZT-xzb" id="Vok-xk-Yhr"/>
+                <outlet property="usernameTextView" destination="09s-rX-gcG" id="r1n-TI-3xW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="376"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TfK-Ki-pHg">
+                    <rect key="frame" x="16" y="24" width="318" height="328"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09s-rX-gcG" customClass="SATextView" customModule="ShoppingApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="76"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="76" id="UwQ-dy-fUg"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2EQ-N7-Ho2" customClass="SATextView" customModule="ShoppingApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="84" width="318" height="76"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="76" id="Pf4-69-jYa"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="E-Mail"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4j-ZT-xzb" customClass="SATextView" customModule="ShoppingApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="168" width="318" height="76"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="76" id="EaP-C8-r9h"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-YT-LtS" customClass="SATextView" customModule="ShoppingApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="252" width="318" height="76"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" constant="76" id="0Ap-sG-EWn"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password Again"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="TfK-Ki-pHg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="AZg-2c-sfh"/>
+                <constraint firstItem="TfK-Ki-pHg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="K9h-T3-V3w"/>
+                <constraint firstAttribute="trailing" secondItem="TfK-Ki-pHg" secondAttribute="trailing" constant="16" id="flP-YG-OEl"/>
+                <constraint firstAttribute="bottom" secondItem="TfK-Ki-pHg" secondAttribute="bottom" constant="24" id="wkQ-fs-aTv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="56.92307692307692" y="-189.81042654028434"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
