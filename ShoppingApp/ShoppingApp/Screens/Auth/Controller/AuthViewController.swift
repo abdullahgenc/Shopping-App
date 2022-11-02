@@ -67,13 +67,12 @@ final class AuthViewController: SAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Auth"
-        
         setupSignInLayout()
         setupSignUpLayout()
         
         confirmButton.layer.masksToBounds = true
         confirmButton.layer.cornerRadius = 20.0
+        confirmButton.startAnimatingPressActions()
 
         viewModel.changeHandler = { change in
             switch change {
@@ -114,8 +113,9 @@ final class AuthViewController: SAViewController {
 
             viewModel.signIn(email: email, password: password) { [weak self] in
                 guard let self = self else { return }
-
-                self.navigationController?.pushViewController(UIViewController(), animated: true)
+                self.navigationItem.hidesBackButton = true
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                self.navigationController?.pushViewController(MainTabBarController(), animated: true)
             }
         case .signUp:
             guard let email = signUpView.emailTextView.text,

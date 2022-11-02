@@ -35,26 +35,24 @@ final class OnboardingViewController: UIViewController {
             guard let onboardingView = onboardingViews.last else {
                 fatalError("OnboardingView not found")
             }
+            
             contentView.addSubview(onboardingView)
-            onboardingView.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                onboardingView.topAnchor.constraint(equalTo: contentView.topAnchor),
-                onboardingView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-                onboardingView.widthAnchor.constraint(equalToConstant: pageWidth)
-            ])
-            
-            if onboardingViews.count == 1 {
-                NSLayoutConstraint.activate([
-                    onboardingView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
-                ])
-            } else {
-                NSLayoutConstraint.activate([
-                    onboardingView.leadingAnchor.constraint(equalTo: onboardingViews[onboardingViews.count-2].trailingAnchor),
-                    onboardingView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-                ])
+            onboardingView.snp.makeConstraints { make in
+                make.top.equalTo(contentView.snp.top)
+                make.bottom.equalTo(contentView.snp.bottom)
+                make.width.equalTo(pageWidth)
             }
             
+            if onboardingViews.count == 1 {
+                onboardingView.snp.makeConstraints { make in
+                    make.leading.equalTo(contentView.snp.leading)
+                }
+            } else {
+                onboardingView.snp.makeConstraints { make in
+                    make.leading.equalTo(onboardingViews[onboardingViews.count-2].snp.trailing)
+                    make.trailing.equalTo(contentView.snp.trailing)
+                }
+            }
         }
     }
     
@@ -62,8 +60,6 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.delegate = self
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
 
         let firstOnboardingView = OnboardingView()
         firstOnboardingView.image = UIImage(named: "placeholder")
