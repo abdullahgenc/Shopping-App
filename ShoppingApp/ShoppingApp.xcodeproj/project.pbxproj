@@ -56,6 +56,10 @@
 		0BE6E99F2910393500AFCE91 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E99E2910393500AFCE91 /* ProductsViewModel.swift */; };
 		0BE6E9A229103ABA00AFCE91 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 0BE6E9A129103ABA00AFCE91 /* Moya */; };
 		0BE6E9A42912DB2100AFCE91 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9A32912DB2100AFCE91 /* UIButton+Extensions.swift */; };
+		0BE6E9AA291305BF00AFCE91 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9A9291305BF00AFCE91 /* SearchViewModel.swift */; };
+		0BE6E9AC291305CA00AFCE91 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9AB291305CA00AFCE91 /* SearchViewController.swift */; };
+		0BE6E9AE291305E900AFCE91 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9AD291305E900AFCE91 /* SearchView.swift */; };
+		0BE6E9B029133B3D00AFCE91 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9AF29133B3D00AFCE91 /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +126,10 @@
 		0BE6E99929102D6900AFCE91 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0BE6E99E2910393500AFCE91 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		0BE6E9A32912DB2100AFCE91 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		0BE6E9A9291305BF00AFCE91 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		0BE6E9AB291305CA00AFCE91 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0BE6E9AD291305E900AFCE91 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0BE6E9AF29133B3D00AFCE91 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +475,7 @@
 			children = (
 				0BE6E98C290D7BF900AFCE91 /* MainTabBarController.swift */,
 				0BE6E984290C900E00AFCE91 /* Products */,
+				0BE6E9A52912E84E00AFCE91 /* Search */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -492,6 +501,41 @@
 			isa = PBXGroup;
 			children = (
 				0BE6E99E2910393500AFCE91 /* ProductsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0BE6E9A52912E84E00AFCE91 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0BE6E9A82912E87500AFCE91 /* ViewModel */,
+				0BE6E9A72912E86F00AFCE91 /* Controller */,
+				0BE6E9A62912E86900AFCE91 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0BE6E9A62912E86900AFCE91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BE6E9AD291305E900AFCE91 /* SearchView.swift */,
+				0BE6E9AF29133B3D00AFCE91 /* SearchTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BE6E9A72912E86F00AFCE91 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BE6E9AB291305CA00AFCE91 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0BE6E9A82912E87500AFCE91 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0BE6E9A9291305BF00AFCE91 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -655,6 +699,8 @@
 				0BE6E9A42912DB2100AFCE91 /* UIButton+Extensions.swift in Sources */,
 				0BE6E98D290D7BF900AFCE91 /* MainTabBarController.swift in Sources */,
 				0BE6E97F290C560100AFCE91 /* SAViewController.swift in Sources */,
+				0BE6E9AA291305BF00AFCE91 /* SearchViewModel.swift in Sources */,
+				0BE6E9AC291305CA00AFCE91 /* SearchViewController.swift in Sources */,
 				0BE6E974290C542A00AFCE91 /* FireBaseFireStoreAccesible.swift in Sources */,
 				0BE6E97D290C54B400AFCE91 /* FakeStoreAPI.swift in Sources */,
 				0BE6E972290C541200AFCE91 /* UserDefaultsAccesible.swift in Sources */,
@@ -662,6 +708,7 @@
 				0BE6E9942910103F00AFCE91 /* DetailView.swift in Sources */,
 				0B891B42290AD8E20030517C /* SATextView.swift in Sources */,
 				0BE6E977290C545800AFCE91 /* UserDefaultConstants.swift in Sources */,
+				0BE6E9B029133B3D00AFCE91 /* SearchTableViewCell.swift in Sources */,
 				0BE6E989290C904F00AFCE91 /* ProductsViewController.swift in Sources */,
 				0B891B3F290AD69C0030517C /* SAView.swift in Sources */,
 				0BE6E9962910107500AFCE91 /* DetailViewController.swift in Sources */,
@@ -675,6 +722,7 @@
 				0BE6E963290C50BC00AFCE91 /* AuthViewModel.swift in Sources */,
 				0B891B38290AD6130030517C /* SignInView.swift in Sources */,
 				0BE6E970290C53FC00AFCE91 /* Encodable+Extensions.swift in Sources */,
+				0BE6E9AE291305E900AFCE91 /* SearchView.swift in Sources */,
 				0BE6E98F29100DD700AFCE91 /* ProductsView.swift in Sources */,
 				0B36A87B2909A2CA00E48F80 /* OnboardingViewController.swift in Sources */,
 				0BE6E961290C507B00AFCE91 /* User.swift in Sources */,

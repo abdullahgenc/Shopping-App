@@ -12,6 +12,7 @@ let provider = MoyaProvider<FakeStoreAPI>()
 
 enum FakeStoreAPI {
     case getProducts
+    case search(type: String)
 }
 
 extension FakeStoreAPI: TargetType {
@@ -26,6 +27,8 @@ extension FakeStoreAPI: TargetType {
         switch self {
         case .getProducts:
             return "/products"
+        case .search(let type):
+            return "/products/category/\(type)"
         }
     }
     
@@ -35,7 +38,7 @@ extension FakeStoreAPI: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .getProducts:
+        case .getProducts, .search:
             return .requestPlain
         }
     }
