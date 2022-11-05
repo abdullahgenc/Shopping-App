@@ -13,6 +13,9 @@
 		0B36A8802909A78200E48F80 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B36A87F2909A78200E48F80 /* OnboardingView.xib */; };
 		0B36A884290ACFC300E48F80 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36A882290ACFC300E48F80 /* AuthViewController.swift */; };
 		0B36A885290ACFC300E48F80 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B36A883290ACFC300E48F80 /* AuthViewController.xib */; };
+		0B61EAE02914F8C4005777A5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61EADF2914F8C4005777A5 /* ProfileView.swift */; };
+		0B61EAE52914F902005777A5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61EAE42914F902005777A5 /* ProfileViewController.swift */; };
+		0B61EAE72914F911005777A5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61EAE62914F911005777A5 /* ProfileViewModel.swift */; };
 		0B891B36290AD6080030517C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B891B35290AD6080030517C /* SignUpView.swift */; };
 		0B891B38290AD6130030517C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B891B37290AD6130030517C /* SignInView.swift */; };
 		0B891B3A290AD6210030517C /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B891B39290AD6210030517C /* SignInView.xib */; };
@@ -86,6 +89,9 @@
 		0B36A87F2909A78200E48F80 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		0B36A882290ACFC300E48F80 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0B36A883290ACFC300E48F80 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		0B61EADF2914F8C4005777A5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0B61EAE42914F902005777A5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0B61EAE62914F911005777A5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0B891B35290AD6080030517C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0B891B37290AD6130030517C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		0B891B39290AD6210030517C /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
@@ -217,6 +223,40 @@
 				0B36A883290ACFC300E48F80 /* AuthViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0B61EADE29148802005777A5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0B61EAE32914F8E5005777A5 /* ViewModel */,
+				0B61EAE22914F8D8005777A5 /* Controller */,
+				0B61EAE12914F8D0005777A5 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0B61EAE12914F8D0005777A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B61EADF2914F8C4005777A5 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B61EAE22914F8D8005777A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B61EAE42914F902005777A5 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B61EAE32914F8E5005777A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B61EAE62914F911005777A5 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0B891B33290AD5C20030517C /* SignIn */ = {
@@ -476,6 +516,7 @@
 				0BE6E98C290D7BF900AFCE91 /* MainTabBarController.swift */,
 				0BE6E984290C900E00AFCE91 /* Products */,
 				0BE6E9A52912E84E00AFCE91 /* Search */,
+				0B61EADE29148802005777A5 /* Profile */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -719,11 +760,14 @@
 				0B36A884290ACFC300E48F80 /* AuthViewController.swift in Sources */,
 				0BE6E97A290C547C00AFCE91 /* AlertPresentable.swift in Sources */,
 				0BE6E99A29102D6900AFCE91 /* Product.swift in Sources */,
+				0B61EAE02914F8C4005777A5 /* ProfileView.swift in Sources */,
 				0BE6E963290C50BC00AFCE91 /* AuthViewModel.swift in Sources */,
 				0B891B38290AD6130030517C /* SignInView.swift in Sources */,
 				0BE6E970290C53FC00AFCE91 /* Encodable+Extensions.swift in Sources */,
+				0B61EAE72914F911005777A5 /* ProfileViewModel.swift in Sources */,
 				0BE6E9AE291305E900AFCE91 /* SearchView.swift in Sources */,
 				0BE6E98F29100DD700AFCE91 /* ProductsView.swift in Sources */,
+				0B61EAE52914F902005777A5 /* ProfileViewController.swift in Sources */,
 				0B36A87B2909A2CA00E48F80 /* OnboardingViewController.swift in Sources */,
 				0BE6E961290C507B00AFCE91 /* User.swift in Sources */,
 			);

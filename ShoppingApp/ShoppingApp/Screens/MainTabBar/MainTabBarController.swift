@@ -22,7 +22,7 @@ final class MainTabBarController: UITabBarController {
         let searchViewController = SearchViewController(viewModel: SearchViewModel())
         let searchNavigationController = UINavigationController(rootViewController: searchViewController)
         
-        let profileViewController = UIViewController()
+        let profileViewController = ProfileViewController(viewModel: ProfileViewModel())
         let profileNavigationController = UINavigationController(rootViewController: profileViewController)
         
         viewControllers = [productsNavigationController,
