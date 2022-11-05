@@ -60,8 +60,6 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.delegate = self
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
 
         var views = [OnboardingView]()
         
@@ -136,7 +134,7 @@ final class OnboardingViewController: UIViewController {
     }
     
     private func goToAuth() {
-        navigationController?.pushViewController(UIViewController(), animated: true)
+        navigationController?.pushViewController(AuthViewController(viewModel: AuthViewModel()), animated: true)
     }
 }
 
