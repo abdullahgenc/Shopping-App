@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B27D429291708E200CB53CF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B27D428291708E200CB53CF /* SnapKit */; };
 		0B36A87B2909A2CA00E48F80 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36A8792909A2CA00E48F80 /* OnboardingViewController.swift */; };
 		0B36A87C2909A2CA00E48F80 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B36A87A2909A2CA00E48F80 /* OnboardingViewController.xib */; };
 		0B36A87E2909A76200E48F80 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36A87D2909A76200E48F80 /* OnboardingView.swift */; };
@@ -33,6 +34,7 @@
 		0BE2F5FA2909534600E2AA92 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5F92909534600E2AA92 /* ShoppingAppTests.swift */; };
 		0BE2F6042909534600E2AA92 /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F6032909534600E2AA92 /* ShoppingAppUITests.swift */; };
 		0BE2F6062909534600E2AA92 /* ShoppingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F6052909534600E2AA92 /* ShoppingAppUITestsLaunchTests.swift */; };
+<<<<<<< HEAD
 		0BE6E961290C507B00AFCE91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E960290C507B00AFCE91 /* User.swift */; };
 		0BE6E963290C50BC00AFCE91 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E962290C50BC00AFCE91 /* AuthViewModel.swift */; };
 		0BE6E967290C522800AFCE91 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0BE6E966290C522800AFCE91 /* FirebaseAuth */; };
@@ -63,6 +65,8 @@
 		0BE6E9AC291305CA00AFCE91 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9AB291305CA00AFCE91 /* SearchViewController.swift */; };
 		0BE6E9AE291305E900AFCE91 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9AD291305E900AFCE91 /* SearchView.swift */; };
 		0BE6E9B029133B3D00AFCE91 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE6E9AF29133B3D00AFCE91 /* SearchTableViewCell.swift */; };
+=======
+>>>>>>> feature/onboarding-screen
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				0BE6E99D2910341F00AFCE91 /* Kingfisher in Frameworks */,
 				0B891B48290AEE6E0030517C /* SnapKit in Frameworks */,
 				0BE6E96B290C522800AFCE91 /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -150,6 +155,9 @@
 				0BE6E96D290C522800AFCE91 /* FirebaseStorage in Frameworks */,
 				0BE6E9A229103ABA00AFCE91 /* Moya in Frameworks */,
 				0BE6E969290C522800AFCE91 /* FirebaseFirestoreSwift in Frameworks */,
+=======
+				0B27D429291708E200CB53CF /* SnapKit in Frameworks */,
+>>>>>>> feature/onboarding-screen
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +606,7 @@
 			);
 			name = ShoppingApp;
 			packageProductDependencies = (
+<<<<<<< HEAD
 				0B891B47290AEE6E0030517C /* SnapKit */,
 				0BE6E966290C522800AFCE91 /* FirebaseAuth */,
 				0BE6E968290C522800AFCE91 /* FirebaseFirestoreSwift */,
@@ -605,6 +614,9 @@
 				0BE6E96C290C522800AFCE91 /* FirebaseStorage */,
 				0BE6E99C2910341F00AFCE91 /* Kingfisher */,
 				0BE6E9A129103ABA00AFCE91 /* Moya */,
+=======
+				0B27D428291708E200CB53CF /* SnapKit */,
+>>>>>>> feature/onboarding-screen
 			);
 			productName = ShoppingApp;
 			productReference = 0BE2F5DF2909534500E2AA92 /* ShoppingApp.app */;
@@ -679,10 +691,14 @@
 			);
 			mainGroup = 0BE2F5D62909534500E2AA92;
 			packageReferences = (
+<<<<<<< HEAD
 				0B891B46290AEE6E0030517C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0BE6E965290C522800AFCE91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				0BE6E99B2910341F00AFCE91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0BE6E9A029103ABA00AFCE91 /* XCRemoteSwiftPackageReference "Moya" */,
+=======
+				0B27D427291708E200CB53CF /* XCRemoteSwiftPackageReference "SnapKit" */,
+>>>>>>> feature/onboarding-screen
 			);
 			productRefGroup = 0BE2F5E02909534500E2AA92 /* Products */;
 			projectDirPath = "";
@@ -1125,7 +1141,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+<<<<<<< HEAD
 		0B891B46290AEE6E0030517C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+=======
+		0B27D427291708E200CB53CF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+>>>>>>> feature/onboarding-screen
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -1161,9 +1181,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+<<<<<<< HEAD
 		0B891B47290AEE6E0030517C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B891B46290AEE6E0030517C /* XCRemoteSwiftPackageReference "SnapKit" */;
+=======
+		0B27D428291708E200CB53CF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B27D427291708E200CB53CF /* XCRemoteSwiftPackageReference "SnapKit" */;
+>>>>>>> feature/onboarding-screen
 			productName = SnapKit;
 		};
 		0BE6E966290C522800AFCE91 /* FirebaseAuth */ = {
