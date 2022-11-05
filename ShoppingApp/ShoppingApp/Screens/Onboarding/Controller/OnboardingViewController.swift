@@ -27,30 +27,30 @@ final class OnboardingViewController: UIViewController {
     
     var onboardingViews = [OnboardingView]() {
         didSet {
-            
             let numberOfPages = onboardingViews.count
             scrollView.contentSize.width = CGFloat(numberOfPages) * pageWidth
             pageControl.numberOfPages = numberOfPages
-
-            guard let onboardingView = onboardingViews.last else {
-                fatalError("OnboardingView not found")
-            }
             
-            contentView.addSubview(onboardingView)
-            onboardingView.snp.makeConstraints { make in
-                make.top.equalTo(contentView.snp.top)
-                make.bottom.equalTo(contentView.snp.bottom)
-                make.width.equalTo(pageWidth)
-            }
-            
-            if onboardingViews.count == 1 {
+            for onboardingView in onboardingViews {
+                contentView.addSubview(onboardingView)
                 onboardingView.snp.makeConstraints { make in
-                    make.leading.equalTo(contentView.snp.leading)
+                    make.top.equalTo(contentView.snp.top)
+                    make.bottom.equalTo(contentView.snp.bottom)
+                    make.width.equalTo(pageWidth)
                 }
-            } else {
-                onboardingView.snp.makeConstraints { make in
-                    make.leading.equalTo(onboardingViews[onboardingViews.count-2].snp.trailing)
-                    make.trailing.equalTo(contentView.snp.trailing)
+                if onboardingView.tag == 1 {
+                    onboardingView.snp.makeConstraints { make in
+                        make.leading.equalTo(contentView.snp.leading)
+                    }
+                } else if onboardingView.tag == onboardingViews.count {
+                    onboardingView.snp.makeConstraints { make in
+                        make.leading.equalTo(onboardingViews[onboardingView.tag - 2].snp.trailing)
+                        make.trailing.equalTo(contentView.snp.trailing)
+                    }
+                } else {
+                    onboardingView.snp.makeConstraints { make in
+                        make.leading.equalTo(onboardingViews[onboardingView.tag - 2].snp.trailing)
+                    }
                 }
             }
         }
@@ -61,18 +61,35 @@ final class OnboardingViewController: UIViewController {
 
         scrollView.delegate = self
 
+        var views = [OnboardingView]()
+        
         let firstOnboardingView = OnboardingView()
+        firstOnboardingView.tag = 1
         firstOnboardingView.image = UIImage(named: "placeholder")
         firstOnboardingView.text = "First Onboarding View"
-        onboardingViews.append(firstOnboardingView)
+        views.append(firstOnboardingView)
         
         let secondOnboardingView = OnboardingView()
+        secondOnboardingView.tag = 2
         secondOnboardingView.image = UIImage(named: "placeholder")
         secondOnboardingView.text = "Second Onboarding View"
-        onboardingViews.append(secondOnboardingView)
+        views.append(secondOnboardingView)
         
-        
-        
+        let thirdOnboardingView = OnboardingView()
+        thirdOnboardingView.tag = 3
+        thirdOnboardingView.image = UIImage(named: "placeholder")
+        thirdOnboardingView.text = "Third Onboarding View"
+        views.append(thirdOnboardingView)
+
+        onboardingViews = views
+
+        let defaults = UserDefaults.standard
+        let isOnboardingScreenViewedKey = "isOnboardingScreenViewed"
+        if defaults.bool(forKey: isOnboardingScreenViewedKey) == false {
+            defaults.set(true, forKey: isOnboardingScreenViewedKey)
+        } else {
+            goToAuth()
+        }
     }
 
     @IBAction func didTapNextButton(_ sender: UIButton) {
