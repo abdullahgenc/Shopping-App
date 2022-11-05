@@ -35,12 +35,23 @@ final class OnboardingViewController: UIViewController {
             for onboardingView in onboardingViews {
                 contentView.addSubview(onboardingView)
                 onboardingView.snp.makeConstraints { make in
-                    make.leading.equalTo(contentView.snp.leading)
+                    make.top.equalTo(contentView.snp.top)
+                    make.bottom.equalTo(contentView.snp.bottom)
+                    make.width.equalTo(pageWidth)
                 }
-            } else {
-                onboardingView.snp.makeConstraints { make in
-                    make.leading.equalTo(onboardingViews[onboardingViews.count-2].snp.trailing)
-                    make.trailing.equalTo(contentView.snp.trailing)
+                if onboardingView.tag == 1 {
+                    onboardingView.snp.makeConstraints { make in
+                        make.leading.equalTo(contentView.snp.leading)
+                    }
+                } else if onboardingView.tag == onboardingViews.count {
+                    onboardingView.snp.makeConstraints { make in
+                        make.leading.equalTo(onboardingViews[onboardingView.tag - 2].snp.trailing)
+                        make.trailing.equalTo(contentView.snp.trailing)
+                    }
+                } else {
+                    onboardingView.snp.makeConstraints { make in
+                        make.leading.equalTo(onboardingViews[onboardingView.tag - 2].snp.trailing)
+                    }
                 }
             }
         }
@@ -50,15 +61,19 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.delegate = self
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
 
         var views = [OnboardingView]()
 
         let firstOnboardingView = OnboardingView()
+        firstOnboardingView.tag = 1
         firstOnboardingView.image = UIImage(named: "placeholder")
         firstOnboardingView.text = "First Onboarding View"
         views.append(firstOnboardingView)
 
         let secondOnboardingView = OnboardingView()
+        secondOnboardingView.tag = 2
         secondOnboardingView.image = UIImage(named: "placeholder")
         secondOnboardingView.text = "Second Onboarding View"
         views.append(secondOnboardingView)
