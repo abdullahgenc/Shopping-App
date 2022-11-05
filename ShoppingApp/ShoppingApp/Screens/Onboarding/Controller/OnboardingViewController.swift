@@ -12,7 +12,8 @@ final class OnboardingViewController: UIViewController {
     private let pageWidth: CGFloat = UIScreen.main.bounds.width
 
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var contentView:
+    UIView!
     @IBOutlet private weak var skipButton: UIButton!
     @IBOutlet private weak var nextButton: UIButton!
     @IBOutlet private weak var pageControl: UIPageControl!
@@ -27,32 +28,34 @@ final class OnboardingViewController: UIViewController {
     
     var onboardingViews = [OnboardingView]() {
         didSet {
+            
             let numberOfPages = onboardingViews.count
             scrollView.contentSize.width = CGFloat(numberOfPages) * pageWidth
             pageControl.numberOfPages = numberOfPages
-            
-            for onboardingView in onboardingViews {
-                contentView.addSubview(onboardingView)
-                onboardingView.snp.makeConstraints { make in
-                    make.top.equalTo(contentView.snp.top)
-                    make.bottom.equalTo(contentView.snp.bottom)
-                    make.width.equalTo(pageWidth)
-                }
-                if onboardingView.tag == 1 {
-                    onboardingView.snp.makeConstraints { make in
-                        make.leading.equalTo(contentView.snp.leading)
-                    }
-                } else if onboardingView.tag == onboardingViews.count {
-                    onboardingView.snp.makeConstraints { make in
-                        make.leading.equalTo(onboardingViews[onboardingView.tag - 2].snp.trailing)
-                        make.trailing.equalTo(contentView.snp.trailing)
-                    }
-                } else {
-                    onboardingView.snp.makeConstraints { make in
-                        make.leading.equalTo(onboardingViews[onboardingView.tag - 2].snp.trailing)
-                    }
-                }
+
+            guard let onboardingView = onboardingViews.last else {
+                fatalError("OnboardingView not found")
             }
+            contentView.addSubview(onboardingView)
+            onboardingView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                onboardingView.topAnchor.constraint(equalTo: contentView.topAnchor),
+                onboardingView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+                onboardingView.widthAnchor.constraint(equalToConstant: pageWidth)
+            ])
+            
+            if onboardingViews.count == 1 {
+                NSLayoutConstraint.activate([
+                    onboardingView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+                ])
+            } else {
+                NSLayoutConstraint.activate([
+                    onboardingView.leadingAnchor.constraint(equalTo: onboardingViews[onboardingViews.count-2].trailingAnchor),
+                    onboardingView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+                ])
+            }
+            
         }
     }
     
@@ -63,35 +66,18 @@ final class OnboardingViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: true)
 
-        var views = [OnboardingView]()
-        
         let firstOnboardingView = OnboardingView()
-        firstOnboardingView.tag = 1
         firstOnboardingView.image = UIImage(named: "placeholder")
         firstOnboardingView.text = "First Onboarding View"
-        views.append(firstOnboardingView)
+        onboardingViews.append(firstOnboardingView)
         
         let secondOnboardingView = OnboardingView()
-        secondOnboardingView.tag = 2
         secondOnboardingView.image = UIImage(named: "placeholder")
         secondOnboardingView.text = "Second Onboarding View"
-        views.append(secondOnboardingView)
+        onboardingViews.append(secondOnboardingView)
         
-        let thirdOnboardingView = OnboardingView()
-        thirdOnboardingView.tag = 3
-        thirdOnboardingView.image = UIImage(named: "placeholder")
-        thirdOnboardingView.text = "Third Onboarding View"
-        views.append(thirdOnboardingView)
-
-        onboardingViews = views
-
-        let defaults = UserDefaults.standard
-        let isOnboardingScreenViewedKey = "isOnboardingScreenViewed"
-        if defaults.bool(forKey: isOnboardingScreenViewedKey) == false {
-            defaults.set(true, forKey: isOnboardingScreenViewedKey)
-        } else {
-            goToAuth()
-        }
+        
+        
     }
 
     @IBAction func didTapNextButton(_ sender: UIButton) {
