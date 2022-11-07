@@ -23,7 +23,7 @@ final class OnboardingView: UIView {
     
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet weak var label: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
