@@ -106,7 +106,7 @@ final class OnboardingViewController: UIViewController {
         if defaults.bool(forKey: isOnboardingScreenViewedKey) == false {
             defaults.set(true, forKey: isOnboardingScreenViewedKey)
         } else {
-//            goToAuth()
+            goToAuth()
         }
     }
 

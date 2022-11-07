@@ -22,5 +22,5 @@ final class OnboardingView: SAView {
     }
     
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet weak var label: UILabel!
 }
