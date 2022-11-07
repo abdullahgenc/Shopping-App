@@ -42,11 +42,11 @@ An application that you can explore many products and get it delivered on time.
 <details>
   <summary>Products - Detail Screen</summary>
   
-  <img src="https://user-images.githubusercontent.com/47529941/200256169-0078e68c-4d42-4e5e-b1df-d1bcde4082dd.png" width="180">
-  <img src="https://user-images.githubusercontent.com/47529941/200256174-58613ebd-04d9-4ede-8175-35ee1a69342c.png" width="180">
-  <img src="https://user-images.githubusercontent.com/47529941/200256177-13deaa0a-9882-40ee-824a-eed0f2c0d681.png" width="180">
-  <img src="https://user-images.githubusercontent.com/47529941/200256180-46515b46-851a-4223-a531-ab8ba76f97f6.png" width="180">
-  <img src="https://user-images.githubusercontent.com/47529941/200256183-0fa1e184-07ab-4d41-b97f-d133c2e12271.png" width="180">
+  <img src="https://user-images.githubusercontent.com/47529941/200256169-0078e68c-4d42-4e5e-b1df-d1bcde4082dd.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200256174-58613ebd-04d9-4ede-8175-35ee1a69342c.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200256177-13deaa0a-9882-40ee-824a-eed0f2c0d681.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200256180-46515b46-851a-4223-a531-ab8ba76f97f6.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200256183-0fa1e184-07ab-4d41-b97f-d133c2e12271.png" width="200">
 
 </details>
 
@@ -72,12 +72,12 @@ An application that you can explore many products and get it delivered on time.
 <details>
   <summary>Basket Screen</summary>
   
-  <img src="https://user-images.githubusercontent.com/47529941/200258254-91f6b962-9bc6-4e08-a1ef-049f7190047f.png" width="150">
-  <img src="https://user-images.githubusercontent.com/47529941/200258263-c6ac07b6-c04e-4375-bab3-69347818dac4.png" width="150">
-  <img src="https://user-images.githubusercontent.com/47529941/200258266-a5953d79-df70-4852-8c75-9c6f1bfad242.png" width="150">
-  <img src="https://user-images.githubusercontent.com/47529941/200258267-e7e84eba-ae7a-4e20-b80c-ca3c59885238.png" width="150">
-  <img src="https://user-images.githubusercontent.com/47529941/200258269-6e660b88-56e1-40d2-aea0-ba3d92b0bee3.png" width="150">
-  <img src="https://user-images.githubusercontent.com/47529941/200258270-78ffc588-3d21-4818-8223-df2cb381e609.png" width="150">
+  <img src="https://user-images.githubusercontent.com/47529941/200258254-91f6b962-9bc6-4e08-a1ef-049f7190047f.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200258263-c6ac07b6-c04e-4375-bab3-69347818dac4.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200258266-a5953d79-df70-4852-8c75-9c6f1bfad242.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200258267-e7e84eba-ae7a-4e20-b80c-ca3c59885238.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200258269-6e660b88-56e1-40d2-aea0-ba3d92b0bee3.png" width="200">
+  <img src="https://user-images.githubusercontent.com/47529941/200258270-78ffc588-3d21-4818-8223-df2cb381e609.png" width="200">
 
 </details>
 
