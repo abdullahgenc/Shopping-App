@@ -104,7 +104,7 @@ final class ProfileView: UIView {
             make.leading.equalToSuperview().offset(16.0)
             make.trailing.equalToSuperview().offset(-16.0)
             make.top.equalTo(favoriteLabel.snp.bottom).offset(16.0)
-            make.bottom.equalToSuperview().offset(16.0)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16.0)
         }
     }
     

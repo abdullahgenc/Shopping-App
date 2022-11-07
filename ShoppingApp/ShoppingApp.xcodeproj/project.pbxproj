@@ -24,7 +24,10 @@
 		0B891B3F290AD69C0030517C /* SAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B891B3E290AD69C0030517C /* SAView.swift */; };
 		0B891B42290AD8E20030517C /* SATextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B891B41290AD8E20030517C /* SATextView.swift */; };
 		0B891B45290AD9160030517C /* SATextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B891B44290AD9160030517C /* SATextView.xib */; };
-		0B891B48290AEE6E0030517C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B891B47290AEE6E0030517C /* SnapKit */; };
+		0BAF13FD2917258100801F9D /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF13FC2917258100801F9D /* BasketView.swift */; };
+		0BAF13FF291725B800801F9D /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF13FE291725B800801F9D /* BasketTableViewCell.swift */; };
+		0BAF14012917354F00801F9D /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF14002917354F00801F9D /* BasketViewController.swift */; };
+		0BAF14032917364200801F9D /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF14022917364200801F9D /* BasketViewModel.swift */; };
 		0BE2F5E32909534500E2AA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E22909534500E2AA92 /* AppDelegate.swift */; };
 		0BE2F5E52909534500E2AA92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E42909534500E2AA92 /* SceneDelegate.swift */; };
 		0BE2F5E72909534500E2AA92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E62909534500E2AA92 /* ViewController.swift */; };
@@ -100,6 +103,10 @@
 		0B891B3E290AD69C0030517C /* SAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAView.swift; sourceTree = "<group>"; };
 		0B891B41290AD8E20030517C /* SATextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATextView.swift; sourceTree = "<group>"; };
 		0B891B44290AD9160030517C /* SATextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SATextView.xib; sourceTree = "<group>"; };
+		0BAF13FC2917258100801F9D /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		0BAF13FE291725B800801F9D /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
+		0BAF14002917354F00801F9D /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		0BAF14022917364200801F9D /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		0BE2F5DF2909534500E2AA92 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE2F5E22909534500E2AA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BE2F5E42909534500E2AA92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BE6E99D2910341F00AFCE91 /* Kingfisher in Frameworks */,
-                0B27D429291708E200CB53CF /* SnapKit in Frameworks */,
+				0B27D429291708E200CB53CF /* SnapKit in Frameworks */,
 				0BE6E96B290C522800AFCE91 /* FirebaseRemoteConfigSwift in Frameworks */,
 				0BE6E967290C522800AFCE91 /* FirebaseAuth in Frameworks */,
 				0BE6E96D290C522800AFCE91 /* FirebaseStorage in Frameworks */,
@@ -308,6 +315,41 @@
 				0B891B44290AD9160030517C /* SATextView.xib */,
 			);
 			path = SATextView;
+			sourceTree = "<group>";
+		};
+		0BAF13F82917192500801F9D /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				0BAF13FB2917194400801F9D /* ViewModel */,
+				0BAF13FA2917193C00801F9D /* Controller */,
+				0BAF13F92917193800801F9D /* View */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		0BAF13F92917193800801F9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0BAF13FC2917258100801F9D /* BasketView.swift */,
+				0BAF13FE291725B800801F9D /* BasketTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BAF13FA2917193C00801F9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0BAF14002917354F00801F9D /* BasketViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0BAF13FB2917194400801F9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0BAF14022917364200801F9D /* BasketViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0BE2F5D62909534500E2AA92 = {
@@ -518,6 +560,7 @@
 				0BE6E984290C900E00AFCE91 /* Products */,
 				0BE6E9A52912E84E00AFCE91 /* Search */,
 				0B61EADE29148802005777A5 /* Profile */,
+				0BAF13F82917192500801F9D /* Basket */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -599,7 +642,7 @@
 			);
 			name = ShoppingApp;
 			packageProductDependencies = (
-                0B27D428291708E200CB53CF /* SnapKit */,
+				0B27D428291708E200CB53CF /* SnapKit */,
 				0BE6E966290C522800AFCE91 /* FirebaseAuth */,
 				0BE6E968290C522800AFCE91 /* FirebaseFirestoreSwift */,
 				0BE6E96A290C522800AFCE91 /* FirebaseRemoteConfigSwift */,
@@ -680,7 +723,7 @@
 			);
 			mainGroup = 0BE2F5D62909534500E2AA92;
 			packageReferences = (
-                0B27D427291708E200CB53CF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0B27D427291708E200CB53CF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0BE6E965290C522800AFCE91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				0BE6E99B2910341F00AFCE91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0BE6E9A029103ABA00AFCE91 /* XCRemoteSwiftPackageReference "Moya" */,
@@ -740,6 +783,7 @@
 				0BE6E99F2910393500AFCE91 /* ProductsViewModel.swift in Sources */,
 				0BE6E9A42912DB2100AFCE91 /* UIButton+Extensions.swift in Sources */,
 				0BE6E98D290D7BF900AFCE91 /* MainTabBarController.swift in Sources */,
+				0BAF13FD2917258100801F9D /* BasketView.swift in Sources */,
 				0BE6E97F290C560100AFCE91 /* SAViewController.swift in Sources */,
 				0BE6E9AA291305BF00AFCE91 /* SearchViewModel.swift in Sources */,
 				0BE6E9AC291305CA00AFCE91 /* SearchViewController.swift in Sources */,
@@ -748,7 +792,9 @@
 				0BE6E972290C541200AFCE91 /* UserDefaultsAccesible.swift in Sources */,
 				0BE2F5E52909534500E2AA92 /* SceneDelegate.swift in Sources */,
 				0BE6E9942910103F00AFCE91 /* DetailView.swift in Sources */,
+				0BAF14032917364200801F9D /* BasketViewModel.swift in Sources */,
 				0B891B42290AD8E20030517C /* SATextView.swift in Sources */,
+				0BAF14012917354F00801F9D /* BasketViewController.swift in Sources */,
 				0BE6E977290C545800AFCE91 /* UserDefaultConstants.swift in Sources */,
 				0BE6E9B029133B3D00AFCE91 /* SearchTableViewCell.swift in Sources */,
 				0BE6E989290C904F00AFCE91 /* ProductsViewController.swift in Sources */,
@@ -761,6 +807,7 @@
 				0B36A884290ACFC300E48F80 /* AuthViewController.swift in Sources */,
 				0BE6E97A290C547C00AFCE91 /* AlertPresentable.swift in Sources */,
 				0BE6E99A29102D6900AFCE91 /* Product.swift in Sources */,
+				0BAF13FF291725B800801F9D /* BasketTableViewCell.swift in Sources */,
 				0B61EAE02914F8C4005777A5 /* ProfileView.swift in Sources */,
 				0BE6E963290C50BC00AFCE91 /* AuthViewModel.swift in Sources */,
 				0B891B38290AD6130030517C /* SignInView.swift in Sources */,

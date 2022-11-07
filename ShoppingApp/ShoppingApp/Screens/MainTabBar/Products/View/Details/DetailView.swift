@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol DetailViewDelegate: AnyObject {
+    func addToBasket(_ view: DetailView)
+}
+
 final class DetailView: UIView {
+    
+    weak var delegate: DetailViewDelegate?
+    
     var id: Int? {
         didSet {
             idKeyLabel.text = "Product ID:    "
@@ -204,7 +211,7 @@ final class DetailView: UIView {
     }
     
     @objc func didTapAddButton(_ sender: UIButton!) {
-        print("\(stepperValue + 1) ITEM(s) ADDED TO BASKET")
+        delegate?.addToBasket(self)
     }
     
     @objc func stepperValueChanged(_ sender: UIStepper!) {

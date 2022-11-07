@@ -44,7 +44,7 @@ final class ProfileViewController: SAViewController {
         //        viewModel.fetchFavorites()
         
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(systemName: "trash"), for: .normal)
+        button.setImage(UIImage(named: "exit"), for: .normal)
         button.addTarget(self, action: #selector(self.clickedSignOut), for: .touchUpInside)
         
         let rightButtonBar = UIBarButtonItem(customView: button)

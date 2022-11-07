@@ -13,7 +13,7 @@ final class MainTabBarController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         title = "Shopping App"
-        let images = ["product", "search", "person"]
+        let images = ["home", "search", "person"]
         let titles = ["Products", "Search", "Profile"]
         
         let productsViewController = ProductsViewController(viewModel: ProductsViewModel())
@@ -30,7 +30,7 @@ final class MainTabBarController: UITabBarController {
                            profileNavigationController]
         
         navigationItem.hidesBackButton = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openBasket))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "basket"), style: .done, target: self, action: #selector(openBasket))
         
         guard let items = self.tabBar.items else {
             return
@@ -46,8 +46,7 @@ final class MainTabBarController: UITabBarController {
     }
     
     @objc func openBasket() {
-        let basketViewController = UIViewController()
+        let basketViewController = BasketViewController(viewModel: BasketViewModel())
         present(basketViewController, animated: true)
     }
-    
 }

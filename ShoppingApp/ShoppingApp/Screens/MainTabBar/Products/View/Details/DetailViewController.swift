@@ -7,8 +7,9 @@
 
 import UIKit
 import Kingfisher
+import FirebaseFirestore
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: SAViewController {
     
     var product: Product? {
         didSet {
@@ -25,6 +26,9 @@ final class DetailViewController: UIViewController {
     
     private let detailView = DetailView()
     
+    private let defaults = UserDefaults.standard
+    private let db = Firestore.firestore()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         hidesBottomBarWhenPushed = true
@@ -36,6 +40,35 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailView.delegate = self
         view = detailView
+    }
+}
+
+extension DetailViewController: DetailViewDelegate {
+    func addToBasket(_ view: DetailView) {
+        
+        let id = "\(detailView.id!)"
+        var productCount = detailView.stepperValue + 1
+        showAlert(title: "\(productCount) ITEM(s) ADDED TO BASKET")
+        guard let uid = defaults.string(forKey: UserDefaultConstants.uid.rawValue) else {
+            return
+        }
+        
+        db.collection("users").document(uid).getDocument() { (querySnapshot, error) in
+            guard let data = querySnapshot?.data() else { return }
+            if data[id] != nil {
+                let dataCount = data[id] as! Int
+                productCount += dataCount
+            }
+            var basketData = [String: Int]()
+            basketData[id] = productCount
+
+            self.db.collection("users").document(uid).setData(basketData, merge: true) { error in
+                if let error = error {
+                    print("Error writing document: \(error)")
+                }
+            }
+        }
     }
 }
