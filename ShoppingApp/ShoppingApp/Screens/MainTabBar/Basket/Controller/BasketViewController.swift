@@ -138,22 +138,23 @@ extension BasketViewController: BasketViewDelegate {
     func completeOrder(for view: BasketView, with sender: UIButton!) {
         let numberOfItems = viewModel.numberOfItems
         showAlert(title: "Warning", message: "Are you sure to complete order?", cancelButtonTitle: "Cancel") { _ in
-            self.showAlert(title: "COMPLETE ORDER SUCCESSFUL!")
-            self.viewModel.deleteAll() { error in
-                if let error = error {
-                    self.showError(error)
-                } else {
-                    if numberOfItems > 0 {
-                        var indexArray = [IndexPath]()
-                        for index in 0...numberOfItems - 1 {
-                            indexArray.append(IndexPath(item: index, section: .zero))
+            self.showAlert(title: "COMPLETE ORDER SUCCESSFUL!") { _ in
+                self.viewModel.deleteAll() { error in
+                    if let error = error {
+                        self.showError(error)
+                    } else {
+                        if numberOfItems > 0 {
+                            var indexArray = [IndexPath]()
+                            for index in 0...numberOfItems - 1 {
+                                indexArray.append(IndexPath(item: index, section: .zero))
+                            }
+                            self.basketArray = []
+                            view.deleteRows(indexPath: indexArray)
+                            self.mainView.price = self.viewModel.totalPriceOfProducts(idAndCounts: self.basketArray)
+                            self.mainView.refresh()
                         }
-                        self.basketArray = []
-                        view.deleteRows(indexPath: indexArray)
-                        self.mainView.price = self.viewModel.totalPriceOfProducts(idAndCounts: self.basketArray)
-                        self.mainView.refresh()
+                        self.dismiss(animated: true)
                     }
-                    self.dismiss(animated: true)
                 }
             }
         }

@@ -10,11 +10,13 @@ import Foundation
 struct User: Encodable {
     let username: String?
     let email: String?
+    let favorites: [String]?
 }
 
 extension User {
     init(from dict: [String: Any]) {
         username = dict["username"] as? String
         email = dict["email"] as? String
+        favorites = dict["favorites"] as? [String]
     }
 }

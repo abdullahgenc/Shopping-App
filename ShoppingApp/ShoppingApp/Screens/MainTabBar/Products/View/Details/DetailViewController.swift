@@ -46,6 +46,17 @@ final class DetailViewController: SAViewController {
 }
 
 extension DetailViewController: DetailViewDelegate {
+    func addToFavorite(_ view: DetailView) {
+        let id = "\(detailView.id!)"
+        showAlert(title: "ITEM ADDED TO FAVORITE")
+        guard let uid = defaults.string(forKey: UserDefaultConstants.uid.rawValue) else {
+            return
+        }
+        db.collection("users").document(uid).updateData([
+            "favorites": FieldValue.arrayUnion([id])
+        ])
+    }
+    
     func addToBasket(_ view: DetailView) {
         
         let id = "\(detailView.id!)"

@@ -41,14 +41,22 @@ final class ProfileViewController: SAViewController {
             }
         }
         
-        //        viewModel.fetchFavorites()
-        
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "exit"), for: .normal)
         button.addTarget(self, action: #selector(self.clickedSignOut), for: .touchUpInside)
         
         let rightButtonBar = UIBarButtonItem(customView: button)
         navigationItem.rightBarButtonItem = rightButtonBar
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchFavorites() { error in
+            if let error = error {
+                self.showError(error)
+            } else {
+                self.mainView.refresh()
+            }
+        }
     }
     
     @objc
@@ -68,9 +76,6 @@ final class ProfileViewController: SAViewController {
 // MARK: - UICollectionViewDelegate
 extension ProfileViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let detailViewController = DetailViewController()
-//        detailViewController.product = viewModel.productForIndexPath(indexPath)
-//        navigationController?.pushViewController(detailViewController, animated: true)
         print("CELL-\(indexPath.row) TAPPED")
     }
 }
@@ -78,22 +83,19 @@ extension ProfileViewController: UICollectionViewDelegate {
 // MARK: - UICollectionViewDataSource
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        viewModel.numberOfItems
-        10
+        viewModel.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductsCollectionViewCell
         
-//        guard let product = viewModel.productForIndexPath(indexPath),
-//              let image = product.image
-//        else {
-//            fatalError("product not found")
-//        }
-//        cell.imageView.kf.setImage(with: URL(string: image))
-//        cell.title = product.title
-        
-        cell.image = UIImage(named: "placeholder")
+        guard let product = viewModel.productForIndexPath(indexPath),
+              let image = product.image
+        else {
+            fatalError("product not found")
+        }
+        cell.imageView.kf.setImage(with: URL(string: image))
+        cell.title = product.title
         return cell
     }
 }

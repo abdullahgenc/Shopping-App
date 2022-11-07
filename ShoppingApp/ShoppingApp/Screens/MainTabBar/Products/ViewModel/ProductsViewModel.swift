@@ -12,7 +12,7 @@ enum ProductsChanges {
     case didFetchList
 }
 
-final class ProductsViewModel {
+final class ProductsViewModel: SAViewModel {
     
     private var products: Products? {
         didSet {
@@ -34,10 +34,35 @@ final class ProductsViewModel {
             case .success(let response):
                 do {
                     let products = try JSONDecoder().decode(Products.self, from: response.data)
+                    self.addProductsToFirebaseFirestore(products)
                     self.products = products
                 } catch {
                     self.changeHandler?(.didErrorOccurred(error))
                 }
+            }
+        }
+    }
+    
+    private func addProductsToFirebaseFirestore(_ products: [Product]?) {
+        guard let products = products else {
+            return
+        }
+        products.forEach { product in
+            do {
+                guard let data = try product.dictionary,
+                      let id = product.id
+                else {
+                    return
+                }
+                
+                db.collection("products").document(String(id)).setData(data) { error in
+                    
+                    if let error = error {
+                        self.changeHandler?(.didErrorOccurred(error))
+                    }
+                }
+            } catch {
+                self.changeHandler?(.didErrorOccurred(error))
             }
         }
     }

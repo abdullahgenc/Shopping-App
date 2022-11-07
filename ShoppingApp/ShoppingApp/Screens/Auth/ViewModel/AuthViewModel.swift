@@ -29,7 +29,8 @@ final class AuthViewModel: SAViewModel {
             }
             
             let user = User(username: username,
-                            email: authResult?.user.email)
+                            email: authResult?.user.email,
+                            favorites: [])
             do {
                 guard let data = try user.dictionary,
                       let id = authResult?.user.uid else {
