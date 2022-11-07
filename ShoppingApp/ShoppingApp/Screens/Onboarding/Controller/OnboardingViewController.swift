@@ -64,24 +64,39 @@ final class OnboardingViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: true)
 
+        skipButton.layer.masksToBounds = true
+        skipButton.layer.cornerRadius = 8.0
+        
+        nextButton.layer.masksToBounds = true
+        nextButton.layer.cornerRadius = 8.0
+        
+        prevButton.layer.masksToBounds = true
+        prevButton.layer.cornerRadius = 8.0
+        
         var views = [OnboardingView]()
 
         let firstOnboardingView = OnboardingView()
         firstOnboardingView.tag = 1
-        firstOnboardingView.image = UIImage(named: "placeholder")
-        firstOnboardingView.text = "First Onboarding View"
+        firstOnboardingView.image = UIImage(named: "onboarding1")
+        firstOnboardingView.text = "Explore many products"
+        firstOnboardingView.label.font = UIFont.boldSystemFont(ofSize: 25.0)
+        firstOnboardingView.label.textColor = .systemPink
         views.append(firstOnboardingView)
 
         let secondOnboardingView = OnboardingView()
         secondOnboardingView.tag = 2
-        secondOnboardingView.image = UIImage(named: "placeholder")
-        secondOnboardingView.text = "Second Onboarding View"
+        secondOnboardingView.image = UIImage(named: "onboarding2")
+        secondOnboardingView.text = "Choose and checkout"
+        secondOnboardingView.label.font = UIFont.boldSystemFont(ofSize: 25.0)
+        secondOnboardingView.label.textColor = .systemPink
         views.append(secondOnboardingView)
 
         let thirdOnboardingView = OnboardingView()
         thirdOnboardingView.tag = 3
-        thirdOnboardingView.image = UIImage(named: "placeholder")
-        thirdOnboardingView.text = "Third Onboarding View"
+        thirdOnboardingView.image = UIImage(named: "onboarding3")
+        thirdOnboardingView.text = "Get it delivered"
+        thirdOnboardingView.label.font = UIFont.boldSystemFont(ofSize: 25.0)
+        thirdOnboardingView.label.textColor = .systemPink
         views.append(thirdOnboardingView)
 
         onboardingViews = views
@@ -91,7 +106,7 @@ final class OnboardingViewController: UIViewController {
         if defaults.bool(forKey: isOnboardingScreenViewedKey) == false {
             defaults.set(true, forKey: isOnboardingScreenViewedKey)
         } else {
-            goToAuth()
+//            goToAuth()
         }
     }
 
