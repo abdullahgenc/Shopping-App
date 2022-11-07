@@ -28,6 +28,7 @@
 		0BAF13FF291725B800801F9D /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF13FE291725B800801F9D /* BasketTableViewCell.swift */; };
 		0BAF14012917354F00801F9D /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF14002917354F00801F9D /* BasketViewController.swift */; };
 		0BAF14032917364200801F9D /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF14022917364200801F9D /* BasketViewModel.swift */; };
+		0BBC71CB2918ACAC00E469B2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BBC71CA2918ACAC00E469B2 /* IQKeyboardManagerSwift */; };
 		0BE2F5E32909534500E2AA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E22909534500E2AA92 /* AppDelegate.swift */; };
 		0BE2F5E52909534500E2AA92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E42909534500E2AA92 /* SceneDelegate.swift */; };
 		0BE2F5E72909534500E2AA92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2F5E62909534500E2AA92 /* ViewController.swift */; };
@@ -152,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BE6E99D2910341F00AFCE91 /* Kingfisher in Frameworks */,
+				0BBC71CB2918ACAC00E469B2 /* IQKeyboardManagerSwift in Frameworks */,
 				0B27D429291708E200CB53CF /* SnapKit in Frameworks */,
 				0BE6E96B290C522800AFCE91 /* FirebaseRemoteConfigSwift in Frameworks */,
 				0BE6E967290C522800AFCE91 /* FirebaseAuth in Frameworks */,
@@ -649,6 +651,7 @@
 				0BE6E96C290C522800AFCE91 /* FirebaseStorage */,
 				0BE6E99C2910341F00AFCE91 /* Kingfisher */,
 				0BE6E9A129103ABA00AFCE91 /* Moya */,
+				0BBC71CA2918ACAC00E469B2 /* IQKeyboardManagerSwift */,
 			);
 			productName = ShoppingApp;
 			productReference = 0BE2F5DF2909534500E2AA92 /* ShoppingApp.app */;
@@ -727,6 +730,7 @@
 				0BE6E965290C522800AFCE91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				0BE6E99B2910341F00AFCE91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0BE6E9A029103ABA00AFCE91 /* XCRemoteSwiftPackageReference "Moya" */,
+				0BBC71C92918ACAC00E469B2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 0BE2F5E02909534500E2AA92 /* Products */;
 			projectDirPath = "";
@@ -1181,6 +1185,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		0BBC71C92918ACAC00E469B2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
 		0BE6E965290C522800AFCE91 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1213,6 +1225,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B27D427291708E200CB53CF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		0BBC71CA2918ACAC00E469B2 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BBC71C92918ACAC00E469B2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		0BE6E966290C522800AFCE91 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
